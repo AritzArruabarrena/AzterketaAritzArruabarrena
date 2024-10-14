@@ -1,0 +1,33 @@
+{% extends 'firstApp/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Medikuak lista</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Izena</th>
+                    <th>Abizena</th>
+                    <th>Jaiotze_data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mediku in medikua %}
+                <tr>
+                    <td>{{ mediku.id }}</td>
+                    <td>{{ mediku.izena }}</td>
+                    <td>{{ mediku.abizena }}</td>
+                    <td>{{ mediku.jaiotze_data }}</td>
+                      <td>
+                        <a href="{% url 'medikua_editatu' mediku.id %}">
+                            <button class="btn btn-danger">Editatu</button></a>
+                      </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+

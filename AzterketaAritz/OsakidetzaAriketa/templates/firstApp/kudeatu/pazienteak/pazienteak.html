@@ -1,0 +1,11 @@
+{% extends 'firstApp/base.html' %}
+{% block content %}
+    <h1>Paziente datuak:</h1>
+    <div class="d-flex justify-content-center align-items-center vh-100">
+        <div class="d-flex flex-column">
+            <a href="{% url 'pazienteak-list' %}"><button class="btn btn-primary mb-2">Paziente datuak ikusi</button></a>
+            <a href="{% url 'paziente_new' %}"><button class="btn btn-primary">Paziente gehitu</button></a>
+            <a href="{% url 'paziente_delete' %}"><button class="btn btn-primary">Pazienteak Ezabatu</button></a>
+        </div>
+    </div>    
+{% endblock %}

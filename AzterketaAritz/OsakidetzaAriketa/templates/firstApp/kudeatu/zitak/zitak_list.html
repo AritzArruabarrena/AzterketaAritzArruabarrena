@@ -1,0 +1,35 @@
+{% extends 'firstApp/base.html' %}
+
+{% block content %}
+    <div class="container mt-4">
+        <h2>Zitak lista</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Mediku (Izena y Abizena)</th>
+                    <th>Paziente (Izena y Abizena)</th>
+                    <th>Hasiera data</th>
+                    <th>Bukaera data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for zita in zitak %}
+                <tr>
+                    <td>{{ zita.id }}</td>
+                    <td>{{ zita.mediku_id.izena }} {{ zita.mediku_id.abizena }}</td>
+                    <td>{{ zita.paziente_id.izena }} {{ zita.paziente_id.abizena }}</td>
+                    <td>{{ zita.hasiera_data }}</td>
+                    <td>{{ zita.bukaera_data }}</td>
+                    <td>
+                        <a href="{% url 'zitak_ezabatu' zita.id %}">
+                            <button class="btn btn-danger">Kendu</button></a>
+                      </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+
+
